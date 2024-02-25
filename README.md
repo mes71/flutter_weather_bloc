@@ -1,16 +1,31 @@
-# flutter_weather_bloc
+# Flutter Weather Bloc
 
-A new Flutter project.
+![level](https://img.shields.io/badge/level-advanced-red.svg)
 
-## Getting Started
+In this tutorial, we're going to build a Weather app in Flutter which demonstrates how to manage multiple cubits to
+implement dynamic theming, pull-to-refresh, and much more. Our weather app will pull live weather data from the public
+OpenMeteo API and demonstrate how to separate our application into layers (data, repository, business logic, and
+presentation).
 
-This project is a starting point for a Flutter application.
+## Project Requirements
 
-A few resources to get you started if this is your first Flutter project:
+Our app should let users:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Search for a city on a dedicated search page
+- See a pleasant depiction of the weather data returned by Open Meteo API
+- Change the units displayed (metric vs imperial)
+- The theme of the application should reflect the weather for the chosen city
+- Application state should persist across sessions: i.e., the app should remember its state after closing and reopening
+  it (using HydratedBloc)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Key Concepts
+
+- Observe state changes with BlocObserver
+- BlocProvider, Flutter widget that provides a bloc to its children
+- BlocBuilder, Flutter widget that handles building the widget in response to new states
+- Prevent unnecessary rebuilds with Equatable
+- RepositoryProvider, a Flutter widget that provides a repository to its children
+- BlocListener, a Flutter widget that invokes the listener code in response to state changes in the bloc
+- MultiBlocProvider, a Flutter widget that merges multiple BlocProvider widgets into one
+- BlocConsumer, a Flutter widget that exposes a builder and listener in order to react to new states
+- HydratedBloc to manage and persist state
